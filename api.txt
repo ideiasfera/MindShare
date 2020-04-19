@@ -1,0 +1,839 @@
+API
+
+get
+http://localhost:3333/
+
+{
+    "title": "MindShare API em nodeJs",
+    "version": "1.0.0"
+}
+
+post
+http://localhost:3333/usuarios/
+{
+	"login":"ideiasfera",
+	"senha":"123456",
+	"email":"ideiasfera@gmail.com"
+}
+
+{
+    "message": "Usuário cadastrado com sucesso!"
+}
+
+post
+http://localhost:3333/usuarios/login
+{
+	"login":"ideiasfera",
+	"senha":"123456"
+}
+
+{
+    "message": "Login efetuado com sucesso",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E",
+    "usuario": {
+        "id": "5e9c3c1826e9df1e30c6a2c7",
+        "login": "ideiasfera",
+        "senha": "9ad27aa9c90b66270129385deb063f1e",
+        "email": "ideiasfera@gmail.com"
+    }
+}
+
+get
+http://localhost:3333/usuarios/
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E"
+}
+
+[
+    {
+        "id_tipo": "",
+        "tipo": [],
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c3c1826e9df1e30c6a2c7",
+        "login": "ideiasfera",
+        "senha": "9ad27aa9c90b66270129385deb063f1e",
+        "email": "ideiasfera@gmail.com",
+        "datahoracadastro": "2020-04-19T11:55:04.884Z"
+    }
+]
+
+get
+http://localhost:3333/usuarios/:id
+http://localhost:3333/usuarios/5e9c3c1826e9df1e30c6a2c7
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E"
+}
+
+{
+    "id_tipo": "",
+    "tipo": [],
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c3c1826e9df1e30c6a2c7",
+    "login": "ideiasfera",
+    "senha": "9ad27aa9c90b66270129385deb063f1e",
+    "email": "ideiasfera@gmail.com",
+    "datahoracadastro": "2020-04-19T11:55:04.884Z",
+    "__v": 0
+}
+
+{
+    "id_tipo": "",
+    "tipo": [
+        "mindshare"
+    ],
+    "status": true,
+    "datahoraatualizado": "2020-04-19T12:02:45.013Z",
+    "_id": "5e9c3c1826e9df1e30c6a2c7",
+    "login": "ideiasfera",
+    "senha": "9ad27aa9c90b66270129385deb063f1e",
+    "email": "ideiasfera@gmail.com",
+    "datahoracadastro": "2020-04-19T11:55:04.884Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/usuarios/refresh-token
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E"
+}
+
+{
+    "message": "Token atualizado",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E",
+    "usuario": {
+        "id": "5e9c3c1826e9df1e30c6a2c7",
+        "login": "ideiasfera",
+        "senha": "9ad27aa9c90b66270129385deb063f1e",
+        "email": "ideiasfera@gmail.com"
+    }
+}
+
+put
+http://localhost:3333/usuarios/tipo/:id
+http://localhost:3333/usuarios/tipo/5e9c3c1826e9df1e30c6a2c7
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E",
+	"tipo": "mindshare",
+	"id_tipo": ""
+}
+
+{
+    "message": "Usuário permissão com sucesso!"
+}
+
+put
+http://localhost:3333/usuarios/:id
+http://localhost:3333/usuarios/5e9c3c1826e9df1e30c6a2c7
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E",
+	"login":"brunoseabra",
+	"senha":"abcdef",
+	"email":"brunoseabra@gmail.com"
+}
+
+{
+    "message": "Usuário atualizado com sucesso!"
+}
+
+delete
+http://localhost:3333/usuarios/
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWMzYzE4MjZlOWRmMWUzMGM2YTJjNyIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3Mjk3Mzc1LCJleHAiOjE1ODczMDA5NzV9.gY8FlRPkqXTbQSnG2oTLQAHksquC4WtUExiuf63Ky2E",
+	"id":"5e9c3c1826e9df1e30c6a2c7"
+}
+
+{
+    "message": "Usuário removido com sucesso!"
+}
+
+post
+http://localhost:3333/pais/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1MDdiN2NjNWJjMTY4NDZkZTc4NiIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzAyNTMyLCJleHAiOjE1ODczMDYxMzJ9.xSK8QaQI7mp90mfke8tera56fFqwkRx-jfgrqmk7hmI",
+    "nome": "Brasil"
+}
+
+{
+    "message": "País cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/pais/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1MDdiN2NjNWJjMTY4NDZkZTc4NiIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzAyNTMyLCJleHAiOjE1ODczMDYxMzJ9.xSK8QaQI7mp90mfke8tera56fFqwkRx-jfgrqmk7hmI"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c51567cc5bc16846de787",
+        "nome": "Brasil",
+        "datahoracadastro": "2020-04-19T13:25:42.556Z"
+    }
+]
+
+get
+http://localhost:3333/pais/:id
+http://localhost:3333/pais/5e9c51567cc5bc16846de787
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1MDdiN2NjNWJjMTY4NDZkZTc4NiIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzAyNTMyLCJleHAiOjE1ODczMDYxMzJ9.xSK8QaQI7mp90mfke8tera56fFqwkRx-jfgrqmk7hmI"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c51567cc5bc16846de787",
+    "nome": "Brasil",
+    "datahoracadastro": "2020-04-19T13:25:42.556Z",
+    "__v": 0
+}
+
+put
+http://localhost:3333/pais/:id
+http://localhost:3333/pais/5e9c51567cc5bc16846de787
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1MDdiN2NjNWJjMTY4NDZkZTc4NiIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzAyNTMyLCJleHAiOjE1ODczMDYxMzJ9.xSK8QaQI7mp90mfke8tera56fFqwkRx-jfgrqmk7hmI",
+    "nome": "Argentina",
+    "status": true
+}
+
+{
+    "message": "País atualizado com sucesso!"
+}
+
+delete
+http://localhost:3333/pais/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1MDdiN2NjNWJjMTY4NDZkZTc4NiIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzAyNTMyLCJleHAiOjE1ODczMDYxMzJ9.xSK8QaQI7mp90mfke8tera56fFqwkRx-jfgrqmk7hmI",
+    "id": "5e9c51567cc5bc16846de787"
+}
+
+{
+    "message": "País removido com sucesso!"
+}
+
+post
+http://localhost:3333/estados/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA2MjkwLCJleHAiOjE1ODczMDk4OTB9.7FCc-jkTmiMF-7BOFTRji-lI39fxb7cH5i2H3Lsz-08",
+    "pais": "5e9c5f96f456941b9cf9a26a",
+    "estado": "Amazonas",
+    "cidades": "Manaus",
+    "zonas": "Norte",
+    "bairros": "Cidade Nova",
+    "sigla": "AM"
+}
+
+{
+    "message": "Estado cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/estados/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA2MjkwLCJleHAiOjE1ODczMDk4OTB9.7FCc-jkTmiMF-7BOFTRji-lI39fxb7cH5i2H3Lsz-08"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c5fd8f456941b9cf9a26b",
+        "pais": "5e9c5f96f456941b9cf9a26a",
+        "estadocidade": "AmazonasManaus",
+        "estado": "Amazonas",
+        "cidades": "Manaus",
+        "zonas": "Norte",
+        "bairros": "Cidade Nova",
+        "sigla": "AM",
+        "datahoracadastro": "2020-04-19T14:27:36.316Z"
+    }
+]
+
+get
+http://localhost:3333/estados/:id
+http://localhost:3333/estados/5e9c5fd8f456941b9cf9a26b
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA2MjkwLCJleHAiOjE1ODczMDk4OTB9.7FCc-jkTmiMF-7BOFTRji-lI39fxb7cH5i2H3Lsz-08"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c5fd8f456941b9cf9a26b",
+    "pais": "5e9c5f96f456941b9cf9a26a",
+    "estadocidade": "AmazonasManaus",
+    "estado": "Amazonas",
+    "cidades": "Manaus",
+    "zonas": "Norte",
+    "bairros": "Cidade Nova",
+    "sigla": "AM",
+    "datahoracadastro": "2020-04-19T14:27:36.316Z",
+    "__v": 0
+}
+
+put
+http://localhost:3333/estados/:id
+http://localhost:3333/estados/5e9c5fd8f456941b9cf9a26b
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA2MjkwLCJleHAiOjE1ODczMDk4OTB9.7FCc-jkTmiMF-7BOFTRji-lI39fxb7cH5i2H3Lsz-08",
+    "pais": "5e9c5f96f456941b9cf9a26a",
+    "estado": "Para",
+    "cidades": "Belem",
+    "zonas": "Nordeste",
+    "bairros": "Qualquer",
+    "sigla": "PA",
+    "status": true
+}
+
+delete
+http://localhost:3333/estados/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA2MjkwLCJleHAiOjE1ODczMDk4OTB9.7FCc-jkTmiMF-7BOFTRji-lI39fxb7cH5i2H3Lsz-08",
+    "id": "5e9c5fd8f456941b9cf9a26b"
+}
+
+post
+http://localhost:3333/entidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc",
+    "estados": "5e9c65072a4b6e1f88096d67",
+    "nome": "Bruno Seabra Carneiro",
+    "email": "ideiasfera@gmail.com",
+    "telefone": "+55 (92) 99200-8039"
+}
+
+get
+http://localhost:3333/entidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c654c2a4b6e1f88096d68",
+        "estados": "5e9c65072a4b6e1f88096d67",
+        "nome": "Bruno Seabra Carneiro",
+        "email": "ideiasfera@gmail.com",
+        "telefone": "+55 (92) 99200-8039",
+        "datahoracadastro": "2020-04-19T14:50:52.771Z"
+    }
+]
+
+get
+http://localhost:3333/entidades/:id
+http://localhost:3333/entidades/5e9c654c2a4b6e1f88096d68
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c654c2a4b6e1f88096d68",
+    "estados": "5e9c65072a4b6e1f88096d67",
+    "nome": "Bruno Seabra Carneiro",
+    "email": "ideiasfera@gmail.com",
+    "telefone": "+55 (92) 99200-8039",
+    "datahoracadastro": "2020-04-19T14:50:52.771Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/especialidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc",
+    "nome": "médico"
+}
+
+{
+    "message": "Especialidade cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/especialidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c66d32a4b6e1f88096d69",
+        "nome": "médico",
+        "datahoracadastro": "2020-04-19T14:57:23.546Z"
+    }
+]
+
+get
+http://localhost:3333/especialidades/:id
+http://localhost:3333/especialidades/5e9c66d32a4b6e1f88096d69
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c66d32a4b6e1f88096d69",
+    "nome": "médico",
+    "datahoracadastro": "2020-04-19T14:57:23.546Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/exames/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc",
+    "nome": "Exame de sangue"
+}
+
+{
+    "message": "Exame cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/exames/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c677a2a4b6e1f88096d6a",
+        "nome": "Exame de sangue",
+        "datahoracadastro": "2020-04-19T15:00:10.723Z"
+    }
+]
+
+get
+http://localhost:3333/exames/:id
+http://localhost:3333/exames/5e9c677a2a4b6e1f88096d6a
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c677a2a4b6e1f88096d6a",
+    "nome": "Exame de sangue",
+    "datahoracadastro": "2020-04-19T15:00:10.723Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/tipounidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc",
+    "nome": "Hospital"
+}
+
+{
+    "message": "Tipo unidade cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/tipounidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c68062a4b6e1f88096d6b",
+        "nome": "Hospital",
+        "datahoracadastro": "2020-04-19T15:02:30.456Z"
+    }
+]
+
+get
+http://localhost:3333/tipounidades/:id
+http://localhost:3333/tipounidades/5e9c68062a4b6e1f88096d6b
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c68062a4b6e1f88096d6b",
+    "nome": "Hospital",
+    "datahoracadastro": "2020-04-19T15:02:30.456Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/unidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc",
+    "entidades": "5e9c654c2a4b6e1f88096d68",
+    "estados": "5e9c65072a4b6e1f88096d67",
+    "tipounidades": "5e9c68062a4b6e1f88096d6b",
+    "especialidades": "5e9c66d32a4b6e1f88096d69",
+    "exames": "5e9c677a2a4b6e1f88096d6a",
+    "nome": "Hospital Bruno",
+    "email": "ideiasfera@gmail.com",
+    "telefone": "+55 (92) 99200-8039",
+    "diretor": "Bruno",
+    "horario": "08:00"
+}
+
+get
+http://localhost:3333/unidades/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "especialidades": [
+            "5e9c66d32a4b6e1f88096d69"
+        ],
+        "exames": [
+            "5e9c677a2a4b6e1f88096d6a"
+        ],
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c6f4fd82d8210788fa4d1",
+        "entidades": "5e9c654c2a4b6e1f88096d68",
+        "estados": "5e9c65072a4b6e1f88096d67",
+        "tipounidades": "5e9c68062a4b6e1f88096d6b",
+        "nome": "Hospital Bruno",
+        "email": "ideiasfera@gmail.com",
+        "telefone": "+55 (92) 99200-8039",
+        "diretor": "Bruno",
+        "horario": "08:00",
+        "datahoracadastro": "2020-04-19T15:33:35.777Z"
+    }
+]
+
+get
+http://localhost:3333/unidades/:id
+http://localhost:3333/unidades/5e9c6f4fd82d8210788fa4d1
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "especialidades": [
+        "5e9c66d32a4b6e1f88096d69"
+    ],
+    "exames": [
+        "5e9c677a2a4b6e1f88096d6a"
+    ],
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c6f4fd82d8210788fa4d1",
+    "entidades": "5e9c654c2a4b6e1f88096d68",
+    "estados": "5e9c65072a4b6e1f88096d67",
+    "tipounidades": "5e9c68062a4b6e1f88096d6b",
+    "nome": "Hospital Bruno",
+    "email": "ideiasfera@gmail.com",
+    "telefone": "+55 (92) 99200-8039",
+    "diretor": "Bruno",
+    "horario": "08:00",
+    "datahoracadastro": "2020-04-19T15:33:35.777Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/cargos/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc",
+    "nome": "Diretor"
+}
+
+{
+    "message": "Cargo cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/cargos/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c706a2e578c1c38b74594",
+        "nome": "Diretor",
+        "datahoracadastro": "2020-04-19T15:38:18.098Z"
+    }
+]
+
+get
+http://localhost:3333/cargos/:id
+http://localhost:3333/cargos/5e9c706a2e578c1c38b74594
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c706a2e578c1c38b74594",
+    "nome": "Diretor",
+    "datahoracadastro": "2020-04-19T15:38:18.098Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/profissionais/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s",
+    "unidades": "5e9c6f4fd82d8210788fa4d1",
+    "cargos": "5e9c706a2e578c1c38b74594",
+    "nome": "Bruno Seabra Carneiro",
+    "email": "ideiasfera@gmail.com",
+    "telefone": "+55 (92) 99200-8039",
+    "endereco": "Rua Florineia",
+    "tipo": "voluntario",
+    "status": "ativo"
+}
+
+{
+    "message": "Profissional cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/profissionais/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+[
+    {
+        "unidades": [
+            "5e9c6f4fd82d8210788fa4d1"
+        ],
+        "tipo": [
+            "voluntario"
+        ],
+        "datahoraatualizado": null,
+        "_id": "5e9c750e751cc31794375dee",
+        "cargos": "5e9c706a2e578c1c38b74594",
+        "nome": "Bruno Seabra Carneiro",
+        "email": "ideiasfera@gmail.com",
+        "telefone": "+55 (92) 99200-8039",
+        "status": "ativo",
+        "datahoracadastro": "2020-04-19T15:58:06.392Z"
+    }
+]
+
+get
+http://localhost:3333/profissionais/:id
+http://localhost:3333/profissionais/5e9c750e751cc31794375dee
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzA3NjY5LCJleHAiOjE1ODczMTEyNjl9.sCUwMHK9XccyYcFKDOyO7HrOUi52tUH0lL-I2ai4byc"
+}
+
+{
+    "unidades": [
+        "5e9c6f4fd82d8210788fa4d1"
+    ],
+    "tipo": [
+        "voluntario"
+    ],
+    "datahoraatualizado": null,
+    "_id": "5e9c750e751cc31794375dee",
+    "cargos": "5e9c706a2e578c1c38b74594",
+    "nome": "Bruno Seabra Carneiro",
+    "email": "ideiasfera@gmail.com",
+    "telefone": "+55 (92) 99200-8039",
+    "endereco": "Rua Florineia",
+    "status": "ativo",
+    "datahoracadastro": "2020-04-19T15:58:06.392Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/tiposervicos/
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s",
+    "nome": "Concerto"
+}
+
+{
+    "message": "Tipo servico cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/tiposervicos/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c75f9751cc31794375def",
+        "nome": "Concerto",
+        "datahoracadastro": "2020-04-19T16:02:01.470Z"
+    }
+]
+
+get
+http://localhost:3333/tiposervicos/:id
+http://localhost:3333/tiposervicos/5e9c75f9751cc31794375def
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c75f9751cc31794375def",
+    "nome": "Concerto",
+    "datahoracadastro": "2020-04-19T16:02:01.470Z",
+    "__v": 0
+}
+
+post
+http://localhost:3333/tipoequipamentos/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s",
+    "unidades": "5e9c6f4fd82d8210788fa4d1",
+    "nome": "Grande",
+    "equipamento": "Raio x",
+    "foto": "img.png",
+    "fabricante": "G234",
+    "modelo": "H1123"
+}
+
+{
+    "message": "Tipo equipamento cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/tipoequipamentos/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s"
+}
+
+[
+    {
+        "status": true,
+        "datahoraatualizado": null,
+        "_id": "5e9c79fe9f11071988c955be",
+        "unidades": "5e9c6f4fd82d8210788fa4d1",
+        "equipamento": "Raio x",
+        "foto": "img.png",
+        "fabricante": "G234",
+        "modelo": "H1123",
+        "datahoracadastro": "2020-04-19T16:19:10.126Z"
+    }
+]
+
+get
+http://localhost:3333/tipoequipamentos/:id
+http://localhost:3333/tipoequipamentos/5e9c79fe9f11071988c955be
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s"
+}
+
+{
+    "status": true,
+    "datahoraatualizado": null,
+    "_id": "5e9c79fe9f11071988c955be",
+    "unidades": "5e9c6f4fd82d8210788fa4d1",
+    "nome": "Grande",
+    "equipamento": "Raio x",
+    "foto": "img.png",
+    "fabricante": "G234",
+    "modelo": "H1123",
+    "tee": "GrandeRaio x",
+    "datahoracadastro": "2020-04-19T16:19:10.126Z",
+    "__v": 0
+}
+
+xxx feito até aqui
+
+post
+http://localhost:3333/problemas/
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s",
+    "unidades": "5e9c6f4fd82d8210788fa4d1",
+    "tiposervicos": "5e9c75f9751cc31794375def",
+    "tipoequipamentos": "5e9c79fe9f11071988c955be",
+    "profissionais": "5e9c750e751cc31794375dee",
+    "numerodeserie": "12345678",
+    "fabricante": "ABCDE",
+    "modelo": "FGHIJ",
+    "titulo": "Raio X",
+    "laudoprevio": "Problema peca",
+    "foto": "img.png",
+    "tipos": "Brasil",
+    "status": "em conserto"
+}
+
+{
+    "message": "Problema cadastrado com sucesso!"
+}
+
+get
+http://localhost:3333/problemas/
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s"
+}
+
+[
+    {
+        "tipos": [
+            "Brasil"
+        ],
+        "datahoraatualizado": null,
+        "_id": "5e9c7c7ce6828a13d459856f",
+        "unidades": "5e9c6f4fd82d8210788fa4d1",
+        "tiposervicos": "5e9c75f9751cc31794375def",
+        "profissionais": "5e9c750e751cc31794375dee",
+        "numerodeserie": "12345678",
+        "fabricante": "ABCDE",
+        "modelo": "FGHIJ",
+        "titulo": "Raio X",
+        "laudoprevio": "Problema peca",
+        "foto": "img.png",
+        "status": "em conserto",
+        "datahoracadastro": "2020-04-19T16:29:48.727Z"
+    }
+]
+
+get
+http://localhost:3333/problemas/:id
+http://localhost:3333/problemas/5e9c7c7ce6828a13d459856f
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWM1ZjJlZjQ1Njk0MWI5Y2Y5YTI2OCIsImxvZ2luIjoiaWRlaWFzZmVyYSIsInNlbmhhIjoiOWFkMjdhYTljOTBiNjYyNzAxMjkzODVkZWIwNjNmMWUiLCJlbWFpbCI6ImlkZWlhc2ZlcmFAZ21haWwuY29tIiwiaWF0IjoxNTg3MzExMjgwLCJleHAiOjE1ODczMTQ4ODB9.wOHnh8utSF6UDAsyrlc0mQupO0EhwhpzveyHPObTr3s"
+}
+
+{
+    "tipos": [
+        "Brasil"
+    ],
+    "datahoraatualizado": null,
+    "_id": "5e9c7c7ce6828a13d459856f",
+    "unidades": "5e9c6f4fd82d8210788fa4d1",
+    "tiposervicos": "5e9c75f9751cc31794375def",
+    "profissionais": "5e9c750e751cc31794375dee",
+    "numerodeserie": "12345678",
+    "fabricante": "ABCDE",
+    "modelo": "FGHIJ",
+    "titulo": "Raio X",
+    "laudoprevio": "Problema peca",
+    "foto": "img.png",
+    "status": "em conserto",
+    "datahoracadastro": "2020-04-19T16:29:48.727Z",
+    "__v": 0
+}
